@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Manikanta Institute | Elite Math & Coding Academy Khammam</title>
+    <style>
+        :root {
+            --primary: #990000;
+            --primary-hover: #730000;
+            --dark: #111111;
+            --light: #fdfdfd;
+            --gray: #666666;
+            --bg-accent: #fff9f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation Layout */
+        nav {
+            background: #ffffff;
+            border-bottom: 1px solid #eeeeee;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Showcase Section */
+        .hero {
+            padding: 60px 5%;
+            text-align: center;
+            background: radial-gradient(circle at top, #ffffff, #fff2f2);
+            border-bottom: 1px solid #f0e6e6;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(153,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Core Program Grid Section */
+        .programs {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 26px;
+            color: var(--dark);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #eef0f2;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(153,0,0,0.05);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* Digital Asset Storefront Section */
+        .store {
+            background-color: var(--bg-accent);
+            padding: 60px 5%;
+            border-top: 1px solid #fceaea;
+            border-bottom: 1px solid #fceaea;
+        }
+
+        .vault-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #ffcccc;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .product-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f9e6e6;
+        }
+
+        .product-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .product-info h4 {
+            font-size: 15px;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .product-info p {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .buy-btn {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .buy-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        /* Institute Images Gallery Component */
+        .gallery-section {
+            padding: 60px 5% 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            background: #ffffff;
+            border: 1px solid #eef0f2;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            background-color: #fafafa;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            color: var(--dark);
+            background: #ffffff;
+            border-top: 1px solid #eee;
+        }
+
+        /* Contact & Embedded Google Form Section */
+        .contact {
+            padding: 60px 5%;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .iframe-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border: 1px solid #e0e0e0;
+            background: #ffffff;
+        }
+
+        /* Professional Footer Markings */
+        footer {
+            background: var(--dark);
+            color: #888888;
+            text-align: center;
+            padding: 30px 5%;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <nav>
+        <div class="logo">Sri Manikanta Institute™</div>
+        <div class="nav-links">
+            <a href="#courses">Courses</a>
+            <a href="#downloads">Digital Vault</a>
+            <a href="#register">Admission Form</a>
+        </div>
+    </nav>
+
+    <!-- Hero Showcase Module -->
+    <section class="hero">
+        <h1>Learn Concept-Driven Math & Tech</h1>
+        <p>Master high-level textbook proofs, analytical IIT-JEE methodologies, and core software engineering fundamentals taught by <strong>Kiran Sir (M.Tech)</strong>, featuring 17+ years of elite breakthrough results.</p>
+        <a href="https://wa.me" target="_blank" class="cta-btn">💬 WhatsApp For 3-Day Free Demo Class</a>
+    </section>
+
+    <!-- Three Column Grid Programs Section -->
+    <section id="courses" class="programs">
+        <h2 class="section-title">Our Learning Streams</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Rigorous Evaluation</h3>
+                <p>Metrics engineered to dominate Similar Triangles, Trigonometry, and Coordinate Geometry layout proofs with zero rote memorization.</p>
+            </div>
+            <div class="card">
+                <h3>Advanced Mathematical Layouts</h3>
+                <p>Built for classes 8, 9, and 10 to crack national competitive indexing standards effortlessly.</p>
+            </div>
+            <div class="card">
+                <h3>Coding Terminals</h3>
+                <p>Turn idle computer screens into production terminals. Young students build real-world web apps and algorithms using modern raw JavaScript structures.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Asset Storefront Section -->
+    <section id="downloads" class="store">
+        <h2 class="section-title">Digital Solution Vault</h2>
+        <div class="vault-box">
+            <div class="product-row">
+                <div class="product-info">
+                    <h4>📄 TS 10th Maths: Chapter 8 Exercise 8.1 Guide</h4>
+                    <p>Comprehensive step-by-step proofs outputted via custom VS Code text layouts.</p>
+                </div>
+                <!-- Modify the href attribute below to connect to your actual payment link or PDF file asset link -->
+                <a href="https://rzp.io/rzp/3LB7m3L" class="buy-btn">Get PDF (₹39)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Infrastructure Gallery Section -->
+    <    <!-- Visual Infrastructure Gallery Section -->
+       <!-- Visual Infrastructure Gallery Section -->
+    <section class="gallery-section">
+        <h2 class="section-title" style="margin-bottom: 10px;">Our Campus & Results</h2>
+        <div class="gallery-grid">
+            <!-- First Image: Student Studying -->
+            <div class="gallery-item">
+                <img src="images/thansi1.jpg" alt="Sri Manikanta Institute Learning Space" style="height: 350px; object-fit: cover;">
+                <div class="gallery-caption">💻 Smart Digital Computer Lab & Tuition Hub</div>
+            </div>
+            <!-- Second Image: Flex Board Banner -->
+            <div class="gallery-item">
+                <img src="images/ADD1.jpg" alt="Verified Success Flex Board" style="height: 350px; object-fit: contain;">
+                <div class="gallery-caption">🎯 Verified Success Achievements & Flex Board</div>
+            </div>
+            <!-- Third Image: Yoga Activities -->
+            <div class="gallery-item">
+                <img src="images/YOGA.jpg" alt="Extracurricular Activities" style="height: 350px; object-fit: cover;">
+                <div class="gallery-caption">🧘 Extracurricular Activities & Holistic Development</div>
+            </div>
+        </div>
+    </section>
+           <!-- Digital Vault Section -->
+        <!-- Digital Vault Section -->
+    <section id="downloads" class="store" style="background-color: #fff9f9; padding: 40px 5%; border-top: 1px solid #fceaea; border-bottom: 1px solid #fceaea;">
+        <div class="product-row" style="display: flex; justify-content: space-between; align-items: center; background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #ffcccc; max-width: 1200px; margin: 0 auto;">
+            <div class="product-info">
+                <h4 style="margin: 0 0 5px 0; color: #111; font-size: 16px;">Class 10 Similar Triangles Guide (Exercise 8.1)</h4>
+                <p style="margin: 0; color: #666; font-size: 13.5px;">Step-by-step textbook solutions, AA/SAS criteria applications, and target proofs.</p>
+            </div>
+            
+            <!-- RAZORPAY ₹39 BUTTON CONTAINER -->
+            <div class="payment-btn-container" style="min-width: 120px; text-align: right;">
+                <form>
+                    <!-- CRITICAL: Make sure to replace pl_yourActual39RupeeButtonId with your real Razorpay ID string from your dashboard -->
+                    <script src="https://rzp.io/rzp/3LB7m3L" 
+                            data-payment_button_id="pl_yourActual39RupeeButtonId" 
+                            async>
+                    </script>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section with Fixed Embedded Form -->
+    <!-- Registration Section with Fixed Embedded Form -->
+<section class="contact" id="register">
+    <h2 class="section-title" style="margin-bottom: 20px; text-align: center;">Student Registration Portal</h2>
+    <div class="iframe-container">
+        <!-- FIXED LONG EMBED LINK: Restored secure tags and clean source link paths -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSduoKL8ziJ2UeObs380odtMYZW8NoLpHDNCeKcKIdoZCk4EPg/viewform?usp=header"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                style="display: block; border: none; width: 100%; height: 800px;">
+            Loading Enrollment Portal...
+        </iframe>
+    </div>
+</section>
+
+
+
+    <footer style="background: #111111; color: #888888; text-align: center; padding: 30px 5%; font-size: 12px;">
+        <p>&copy; 2026 Sri Manikanta Institute. All Rights Reserved. • Located near Bus Depot to DRDO Road, Khammam.</p>
+    </footer>
+
+</body>
+</html>
+
